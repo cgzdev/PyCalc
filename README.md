@@ -1,2 +1,2 @@
-# PyCual
+# PyCalc
 Calculadora básica en Python
