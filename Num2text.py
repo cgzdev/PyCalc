@@ -53,5 +53,3 @@ try:
     print(f"El número {numero} en texto es: {resultado}")
 except ValueError:
     print("Entrada no válida. Por favor, ingrese un número válido.")
-
-"hola"
