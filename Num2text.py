@@ -1,13 +1,20 @@
-unidades = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve"]
-decenas = ["", "diez", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"]
+unidades = ["", "uno", "dos", "tres", "cuatro", "cinco", "seis", "siete", "ocho", "nueve", "diez", "once", "doce", "trece", "catorce", "quince", "dieciseis", "diecisiete", "dieciocho", "diecinueve"]
+decenas = ["", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"]
 centenas = ["", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos", "seiscientos", "setecientos", "ochocientos", "novecientos"]
 
 def numero_a_texto(numero):
     if numero < 0 or numero > 1000000:
         return "Número fuera de rango"
+
+    if numero == 0:
+        return "cero"
     
-    if numero < 10:
+    if numero < 20:
         return unidades[numero]
+    
+    elif numero >= 20 and numero < 30:
+        unidad = numero % 10
+        return "veinti" + unidades[unidad]
     
     elif numero < 100:
         decena = numero // 10
@@ -45,6 +52,9 @@ def numero_a_texto(numero):
             return numero_a_texto(miles) + " mil"
         else:
             return numero_a_texto(miles) + " mil " + numero_a_texto(resto)
+
+    if numero == 1000000:
+        return "Un millon"
             
 # Ejecución del codigo
 try:
