@@ -11,8 +11,14 @@ def numero_a_texto(numero):
     
     if numero < 20:
         return unidades[numero]
-    
-    elif numero >= 20 and numero < 30:
+
+    if numero == 20:
+        return "veinte"
+
+    if numero == 21: 
+        return "veintiuno"
+        
+    elif numero >= 22 and numero < 30:
         unidad = numero % 10
         return "veinti" + unidades[unidad]
     
@@ -44,7 +50,10 @@ def numero_a_texto(numero):
             return "mil " + numero_a_texto(resto)
         else:
             return numero_a_texto(mil) + " mil " + numero_a_texto(resto)
-    
+
+    elif numero == 21000:
+            return "veintiún" + " " + "mil"
+        
     elif numero < 1000000:
         miles = numero // 1000
         resto = numero % 1000
@@ -55,7 +64,7 @@ def numero_a_texto(numero):
 
     if numero == 1000000:
         return "Un millon"
-            
+
 # Ejecución del codigo
 try:
     numero = int(input("Ingrese un número entre 0 y 1,000,000: "))
